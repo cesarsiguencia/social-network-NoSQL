@@ -71,6 +71,7 @@ const usersController = {
                     res.status(400).json(err)
                 })
     },  
+    
     deleteUser({ params }, res){
         Users.findOneAndDelete({ _id: params.id })
             .then(dbUsers => {
