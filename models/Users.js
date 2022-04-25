@@ -25,18 +25,14 @@ const UsersSchema = new Schema(
         },
         thoughts: [
             {
-                type: Schema, 
-                // Types, ObjectId,
-                ref: 'thoughts'
+                type: Schema. Types. ObjectId,
+                ref: 'Thoughts'
             }
         ],
-        friends: [
-            {
-                type: Schema, 
-                // Types, ObjectId,
-                ref: UsersSchema
-            }
-        ]
+        // friends: {
+        //     type: ObjectId,
+        //     ref: [this]
+        // } 
     },
     {
         toJSON: {
@@ -45,11 +41,11 @@ const UsersSchema = new Schema(
     }
 )
 
-UsersSchema.virtual('friendCount').get(function(){
-    return this.friends.length
-    // reduce((total, comment) => total + friends.)
-})
+// UsersSchema.virtual('friendCount').get(function(){
+//     return this.friends.length
+//     // reduce((total, comment) => total + friends.)
+// })
 
-const Users = model('users', UsersSchema)
+const Users = model('Users', UsersSchema)
 
 module.exports = Users
