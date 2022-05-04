@@ -11,8 +11,15 @@ const {
 router
     .route('/')
     .get(getAllThoughts)
-    .get(getThoughtById)
+
+
+router
+    .route('/:userId')
     .post(addThought)
+
+router
+    .route('/:id')
+    .get(getThoughtById)
     .put(updateThoughtById)
     .delete(deleteThought)
 

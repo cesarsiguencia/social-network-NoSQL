@@ -14,10 +14,13 @@ const {
 router
     .route('/')
     .get(getAllUsers)
-    .get(getUserById)
     .post(addUser)
-    .put(updateUserById)
+  
+router
+    .route('/:id')
+    .get(getUserById)
     .delete(deleteUser)
+    .put(updateUserById)
 
 router
     .route('/:userId/friends/:friendId')

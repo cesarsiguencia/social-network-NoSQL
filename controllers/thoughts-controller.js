@@ -26,12 +26,13 @@ const thoughtsController = {
                     res.status(400).json(err)
                 })
     },
-
+// /someurl/:pizzaId
+// /someurl/asdlkjfawe;oiruawl.kjasdfkj
     addThought({ params, body }, res){
         Thoughts.create(body)
             .then(({ _id }) => {
                 return Users.findOneAndUpdate(
-                    { _id: params.pizzaId },
+                    { _id: params.userId },
                     { $push: { thoughts: _id}},
                     { new: true }
                 );

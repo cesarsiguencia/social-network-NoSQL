@@ -25,7 +25,7 @@ const UsersSchema = new Schema(
         },
         thoughts: [
             {
-                type: Schema. Types. ObjectId,
+                type: Schema.Types.ObjectId,
                 ref: 'Thoughts'
             }
         ],

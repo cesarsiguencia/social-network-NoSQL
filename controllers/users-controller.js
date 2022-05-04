@@ -3,8 +3,8 @@ const { Users } = require('../models')
 const usersController = {
     getAllUsers(req, res){
         Users.find({})
-            .select('-__v')
-            .sort({ _id: -1 })
+            .select('-__v') 
+            .sort({ _id: -1 }) // this puts all in some order
                 .then(dbUser => res.json(dbUser))
                 .catch(err => {
                     console.log(err)
