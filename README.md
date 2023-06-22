@@ -1,11 +1,5 @@
 # NoSQL Social Media by CS
 
-- - - - - - - - - - 
-NOTE FROM DEVELOPER:
-1. THIS APP IS STILL IN DEVELOPMENT, BUT ROUTES CREATED ARE FULLY FUNCTIONAL
-
-- - - - - - - - - - 
-
 I built this back end social media app by practing NoSQL skills and using MongoDB connected with Mongoose. The app can only be run from the command line and using an API client program, such as Insomnia.
 
 ### Collections (Tables)
@@ -27,3 +21,8 @@ I built this back end social media app by practing NoSQL skills and using MongoD
 5. To test routes, visit the sub directory 'routes' for a complete list of routes built. 
 
 
+### Screenshots
+
+![Screenshot 1](./screenshots/1.png)
+
+![Screenshot 2](./screenshots/2.png)

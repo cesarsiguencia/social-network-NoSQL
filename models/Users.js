@@ -1,6 +1,6 @@
-const { Schema , model } = require('mongoose')
+const { Schema, model } = require('mongoose')
 
-var emailValidation = function(email) {
+var emailValidation = function (email) {
     var accepted = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
     return accepted.test(email)
 };
@@ -20,8 +20,6 @@ const UsersSchema = new Schema(
             required: true,
             validate: [emailValidation, 'Email required!'],
             match: [/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/, 'Email required!']
-
-
         },
         thoughts: [
             {
@@ -32,9 +30,9 @@ const UsersSchema = new Schema(
         friends: [
             {
                 type: Schema.Types.ObjectId,
-                ref: 'Users'
+                ref: 'Users',
+                unique: true
             }
-     
         ]
     },
     {
@@ -44,13 +42,13 @@ const UsersSchema = new Schema(
     }
 )
 
-UsersSchema.virtual('friendCount').get(function(){
+UsersSchema.virtual('friendCount').get(function () {
 
-    if(this.friends === undefined){
+    if (this.friends === undefined) {
         return
     }
 
-    if(this.friends.length){
+    if (this.friends.length) {
         return this.friends.length
     }
 })
